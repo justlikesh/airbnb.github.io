@@ -585,16 +585,26 @@ const NextTravelTitle = () => {
           ))}
         </div>
         <hr className='border-gray-300 mb-6 pb-4  ' />
-        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4'>
+        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-9 text-left'>
           {/* 변경된 부분 */}
           {destinations[selectedCategory]
             .slice(0, showAllDestinations ? destinations[selectedCategory].length : 17)
             .map((destination, index) => (
-              <div key={index}>
-                <h3 className='font-semibold'>{destination.city}</h3>
+              <button
+                key={index}
+                className='font-semibold text-left text-sm'
+                onClick={() => console.log(`${destination.city} - ${destination.type}`)}
+              >
+                <div>
+                  <h3 className='font-semibold'>{destination.city}</h3>
+                  <p className='text-gray-500 font-normal'>{destination.type}</p>
+                </div>
+              </button>
+              // <div key={index}>
+              //   <h3 className='font-semibold'>{destination.city}</h3>
 
-                <p className='text-gray-500 font-normal'>{destination.type}</p>
-              </div>
+              //   <p className='text-gray-500 font-normal'>{destination.type}</p>
+              // </div>
             ))}
           {!showAllDestinations && (
             <div className='mt-4'>
