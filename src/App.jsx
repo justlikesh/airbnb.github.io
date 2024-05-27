@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import FooterTitleHome from './components/Footer/FooterTitleHome'
+import FooterTitleIn from './components/Footer/FooterTitleIn'
+import NextTravelTitle from './components/NextTravel/NextTravelTitle'
+import TravelRoadMap from './components/TravelRoadMap/TravelRoadMap'
+import ExploreOtherOptionsTitle from './components/ExploreOtherOptions/ExploreOtherOptionsTitle'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div></div>
-    </>
+    <div className='App'>
+      <TravelRoadMap />
+      <ExploreOtherOptionsTitle />
+      <FooterTitleIn />
+
+      <NextTravelTitle />
+      <FooterTitleHome />
+    </div>
   )
 }
 
